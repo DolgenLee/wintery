@@ -17,6 +17,20 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	  $("#moon").click(function(){
+	  $("#moon").hide();
+	  $("#sun").show();
+	  });
+	  $("#sun").click(function(){
+	  $("#moon").show();
+	  $("#sun").hide();
+	  });
+	});
+	</script>
+
 	<script type="text/javascript">
 	$(document).ready(function(){
 	  $("#mobile-menu-btn").click(function(){
@@ -47,8 +61,51 @@
 	</script>
 
 
+
+<script type="text/javascript">
+    //夜间模式
+(function(){
+    if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
+        if(new Date().getHours() > 22 || new Date().getHours() < 6){
+            document.body.classList.add('night');
+            document.cookie = "night=1;path=/";
+            console.log('夜间模式开启');
+        }else{
+            document.body.classList.remove('night');
+            document.cookie = "night=0;path=/";
+            console.log('夜间模式关闭');
+        }
+    }else{
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+        if(night == '0'){
+            document.body.classList.remove('night');
+        }else if(night == '1'){
+            document.body.classList.add('night');
+        }
+    }
+})();
+//夜间模式切换
+function switchNightMode(){
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    if(night == '0'){
+        document.body.classList.add('night');
+        document.cookie = "night=1;path=/"
+        console.log('夜间模式开启');
+    }else{
+        document.body.classList.remove('night');
+        document.cookie = "night=0;path=/"
+        console.log('夜间模式关闭');
+    }
+}
+</script>
+
+
+
+
+
+
 </head>
-<body>
+<body class="<?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>">
 	<?php global $wintery_get; ?>
 	<div id="header">
 			<div id="logo">
@@ -60,7 +117,12 @@
 					<p><h1 ><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1></p>
 					<p><?php bloginfo('description'); ?></p>
 				</div>
-				<a href="#"><i id="mobile-menu-btn" class="fa fa-bars" aria-hidden="true"></i></a>
+
+				<a href="#"><i id="mobile-menu-btn" class="fa fa-bars" aria-hidden="true"></i>
+				<a href="javascript:switchNightMode()" target="_self"><i id="moon" class="fa fa-moon-o" aria-hidden="true"></i></a>
+				<a href="javascript:switchNightMode()" target="_self"><i id ="sun"class="fa fa-sun-o" aria-hidden="true"></i></a>
+				</a>
+
 
 
 			</div>

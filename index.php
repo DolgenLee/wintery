@@ -10,7 +10,8 @@
 					<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
 					<p class="note-text">
 						背影会解释我所有的取向，今后我与自己流浪
-				</p>
+					</p>
+
 				</div>
 
 			<?php if(have_posts()) : ?>

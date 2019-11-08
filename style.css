@@ -7,6 +7,12 @@ Author:DolgenLee
 Auther url:https://doopee.cn
  */
 
+
+
+
+
+
+
 /*滚动条*/
 body::-webkit-scrollbar {/*滚动条整体样式*/
         width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
@@ -78,8 +84,6 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	#footer{
 		text-align: center;
 		padding: 0 0 20px 0;
-		border:1px solid #e6ecf0; border-style:none solid;
-		border:1px solid #e6ecf0; border-width:1px 0px 0px 0px;
 	}
 	#logo h1{
 		font-size: 22px;
@@ -127,7 +131,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.post-text{
 	padding:20px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:1px 0px 0px 0px;
+	border:1px solid #e6ecf0; border-width:0px 0px 1px 0px;
 	}
 	#back-to-top{
     position:fixed;
@@ -154,7 +158,13 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	float: left;
 	padding:1% 2% 5% 2%;
 }
-
+#moon,#sun{
+	float: right;
+	margin: 15px 15px 0 0;
+}
+body.night #menu-box,body.night #social-icon li a{
+	background: #3b4853;
+}
 	
 }
 
@@ -202,8 +212,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	#footer{
 		text-align: center;
 		padding: 0 0 20px 0;
-		border:1px solid #e6ecf0; border-style:none solid;
-		border:1px solid #e6ecf0; border-width:1px 0px 0px 0px;
+
 	}
 	#logo h1{
 		font-size: 22px;
@@ -260,7 +269,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.post-text{
 	padding:20px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:1px 0px 0px 0px;
+	border:1px solid #e6ecf0; border-width:0px 0px 1px 0px;
 	}
 	#back-to-top{
     position:fixed;
@@ -287,7 +296,13 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	float: left;
 	padding:1% 2% 5% 2%;
 }
-
+#moon,#sun{
+	float: right;
+	padding: 15px 0 15px 0;
+}
+body.night #menu-box,body.night #social-icon li a{
+	background: #3b4853;
+}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -323,7 +338,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	text-align: center;
 	padding: 10px 0 10px 0;
 	background: #f5f8fa;
-	border:1px solid #e6ecf0; border-width:0px 1px 0px 1px;
+
 	}
 	#sidebar ul{
 	list-style-type: none;
@@ -373,7 +388,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.post-text{
 	padding:20px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:0px 1px 1px 1px;
+	border:1px solid #e6ecf0; border-width:0 0 1px 0;
 }
 	#back-to-top{
     position:fixed;
@@ -434,7 +449,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	text-align: center;
 	padding: 10px 0 10px 0;
 	background: #f5f8fa;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
+
 	}
 	#sidebar ul{
 	list-style-type: none;
@@ -450,7 +465,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.post-text{
 	padding:20px 40px 20px 40px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
+	border:1px solid #e6ecf0; border-width:0 0 1px 0;
 }
 	#index-note{
 		overflow: hidden;
@@ -519,7 +534,6 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	text-align: center;
 	padding: 10px 0 10px 0;
 	background: #f5f8fa;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
 	}
 	#sidebar ul{
 	list-style-type: none;
@@ -564,7 +578,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.post-text{
 	padding:20px 40px 20px 40px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
+	border:1px solid #e6ecf0; border-width:0 0 1px 0;
 }
 	#back-to-top{
     position:fixed;
@@ -596,6 +610,10 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 
 
 /*开始通用样式*/
+
+*{
+	font-family: "Verdana","Georgia",STHeiti Light,"Microsoft YaHei","黑体","宋体",sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6, blockquote, p,a,ul,li{
 	text-decoration: none;
@@ -660,7 +678,16 @@ a:active{
 
 /*header*/
 
-	
+#sun{
+	display: none;
+	font-size:18px;
+}
+
+#moon{
+	font-size:18px;
+}
+
+
 #menu-box{
 	margin-top:25px;
 }
@@ -697,8 +724,9 @@ a:active{
 		float: left;
 		color: #17bf63;
 	}
-
-
+#index-note{
+	border-width:0;
+}
 .metadata-bottom .auther img{
 	width: 12px;
 	height:12px;
@@ -778,7 +806,7 @@ padding:1em 0 1em 0;
 .metadata-bottom-single{
 	padding:20px 0 40px 0;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
+	border:1px solid #e6ecf0; border-width:0 0 1px 0;
 }
 .metadata-bottom-single li{
 	font-size: 12px;
@@ -819,6 +847,9 @@ padding:1em 0 1em 0;
 	display: none;
 }
 */
+
+
+
 .auther-copy{
 	background:#8cdfb1;
 	border-radius:20px;
@@ -989,7 +1020,7 @@ padding:1em 0 1em 0;
 }
 .archives li a .atitle:before{
 	position:absolute;
-	left:-12px;
+	left:-14px;
 	background:#fff;
 	height:12px;
 	width:12px;
@@ -1021,12 +1052,12 @@ padding:1em 0 1em 0;
 	background:#fff;
 	 height:18px;
 	 width:18px;
-	 border-radius:6px;
+	 border-radius:12px;
 	 top:3px;
 	 content:""}
 .m-title:after{
 	position:absolute;
-	left:122px;
+	left:121px;
 	background:#ccc;
 	height:12px;
 	width:12px;
@@ -1110,3 +1141,48 @@ padding:1em 0 1em 0;
       -webkit-line-clamp: 1;
 }
 
+/*夜间模式*/
+
+body.night{
+    background-color: #303a44;
+}
+body.night *{
+	color:#d3d6d8;
+}
+
+body.night img {
+    filter: brightness(90%);
+}
+body.night #index-note {
+	background: #15202b;
+	border-width:0 0 1px 0;
+}
+body.night #sidebar ul li{
+	background: #3b4853;
+}
+body.night #footer{
+	background: #15202b;
+}
+body.night .post-category a{
+	color: #fff;
+}
+body.night #container{
+	box-shadow:0 0 5px #15191d;
+}
+body.night .post-text{
+	border:1px solid #15191d;
+	border-width:0 1px 1px 1px;
+}
+body.night .shuoshuo-entry{
+	background: #3b4853;
+}
+body.night .shuoshuo-entry .entry-content p{
+	color:#d3d6d8;
+}
+body.night .shuoshuo-entry .entry-content p{
+	color:#d3d6d8;
+}
+
+body.night .metadata-bottom-single{
+	border:1px solid #15191d;
+}
