@@ -734,10 +734,9 @@ a:active{
 	border-width:0;
 }
 .metadata-bottom .auther img{
-	width: 12px;
-	height:12px;
+	width: 14px;
+	height:14px;
 	border-radius: 10px;
-	box-shadow: 0 0 5px #e1e1e1;
 }
 .metadata-bottom{
 	overflow: hidden;
@@ -909,7 +908,7 @@ padding:1em 0 1em 0;
 	clear: both;
 	padding:20px 40px 20px 40px;
 	border:1px solid #e6ecf0; border-style:none solid;
-	border:1px solid #e6ecf0; border-width:0 1px 1px 1px;
+	border:1px solid #e6ecf0; border-width:0 0 1px 0;
 }
 
 #respond{
@@ -972,7 +971,7 @@ padding:1em 0 1em 0;
         height: 40px;
         width: 100%;
         border-radius: 20px;
-        border:1px solid #fff;
+        border:1px solid #17bf63;
         background: #17bf63;
         color:#fff;
         margin-top: 5px;
@@ -1169,7 +1168,7 @@ body.night #container{
 }
 body.night .post-text{
 	border:1px solid #15191d;
-	border-width:0 1px 1px 1px;
+	border-width:0 0 1px 0;
 }
 body.night .shuoshuo-entry{
 	background: #3b4853;
@@ -1183,4 +1182,25 @@ body.night .shuoshuo-entry .entry-content p{
 
 body.night .metadata-bottom-single{
 	border:1px solid #15191d;
+	border-width:0 0 1px 0;
+}
+body.night .comments-template{
+	border:1px solid #15191d;
+	border-width:0 0 1px 0;
+}
+body.night #comments-input input,body.night #comment{
+	background: #3b4853;
+	border:1px solid #3b4853;
+}
+body.night #comment{
+	color:#fafafa;
+
+}
+
+body.night .auther-copy p,body.night .auther-copy p i{
+	color: #fff;
+}
+
+body.night .nav-links span{
+	color:#777;
 }
