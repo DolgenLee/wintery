@@ -7,11 +7,7 @@
 				</li>
 				<li class="links">
 				<h3><i class="fa fa-link" aria-hidden="true"></i>LINKS</h3>
-					<ul>
-						<li><a href="https://www.ihewro.com/archives/489/" target="_blanket">友人C</a></li>
-						<li><a href="https://blog.wpjam.com/" target="_blanket">wordpress果酱</a></li>
-						<li><a href="http://www.xintheme.com/" target="_blanket">新主题</a></li>
-					</ul>
+					<?php wp_nav_menu(array( 'theme_location'   =>'links_menu')); ?>
 				</li>
 			</ul>
 			

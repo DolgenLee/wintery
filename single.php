@@ -24,18 +24,7 @@
 								 </a>
 							</h2>
 								
-							<ul class="metadata-top">
-									<li class="auther">
-										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
-											<?php echo get_avatar( get_the_author_email(), '60' );?>
-											<?php the_author(); ?>
-										</a>
-									</li>
-										<i class="fa fa-clock-o "></i><?php the_time(); ?>
-									<li class="post-category">
-										<i class="fa fa-folder-o"></i><?php the_category(',') ?>
-									</li>
-							</ul>
+
 							<div class="entry">
 								<?php the_content(); ?>
 								<?php link_pages('
@@ -47,6 +36,22 @@
 									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>本站内容如未特别声明均为原创，谢绝任何个人、机构抓取、转载。
 								</p>
 							</div>
+							<ul class="metadata-bottom">
+									<li class="auther">
+										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
+											<?php echo get_avatar( get_the_author_email(), '60' );?>
+											<?php the_author(); ?>
+										</a>
+									</li>
+									<li class="post-category">
+										<i class="fa fa-folder-o"></i><?php the_category('or') ?>
+									</li>
+									<li><i class="fa fa-clock-o "></i><?php the_time('Y年n月j日'); ?></li>
+
+									<li>
+										<?php edit_post_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>编辑此文', '', ''); ?>
+									</li>	
+							</ul>
 							<div class="metadata-bottom">
 										<li >
 											<?php

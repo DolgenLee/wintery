@@ -661,12 +661,16 @@ a:active{
 /*header*/
 
 	
-
+#menu-box{
+	margin-top:25px;
+}
 
 	.menu{
 		font-size: 16px;
-		padding-top: 20px;
+		padding:10px 0;
 	}
+
+
 	.menu li{
 		padding:0 0 10px 0;
 	}
@@ -695,7 +699,7 @@ a:active{
 	}
 
 
-.metadata-top .auther img{
+.metadata-bottom .auther img{
 	width: 12px;
 	height:12px;
 	border-radius: 10px;
@@ -704,21 +708,18 @@ a:active{
 .metadata-bottom{
 	overflow: hidden;
 }
-.metadata-top{
+.metadata-bottom{
 	font-size: 12px;
 	overflow: hidden;
-	padding-top:10px;
+	padding-top:20px;
 	color:#777;
 }
-.metadata-top li{
-	float: left;
-	padding-right: 20px;
-}
+
 .post-category a{
 	color:#fff;
 	background: #8cdfb1;
 	border-radius:15px;
-	padding:0 5px 0 5px;
+	padding:0 5px;
 
 }
 .post-category a:hover{
@@ -734,7 +735,7 @@ a:active{
 	float: left;
 	width: 33.3%;
 	text-align: center;
-	padding-top:15px;
+	padding-top:10px 0;
 
 }
 .post-img img{
@@ -750,7 +751,7 @@ a:active{
 	height: auto;
 }
 .entry{
-	padding:10px 0 10px 0px;
+
 	text-align: justify;
 }
 .entry img{
@@ -791,7 +792,9 @@ padding:1em 0 1em 0;
 	padding:0;
 }
 /*sidebar*/
-
+.links ul li{
+	font-size:14px;
+}
 
 
 /*搜索*/
@@ -1066,6 +1069,17 @@ padding:1em 0 1em 0;
 
 .clearfix{
 	clear: both;
+}
+/*说说页面*/
+
+.shuoshuo-entry{
+	border-radius:15px;
+	background:#f5f8fa;
+	padding:10px;
+}
+.shuoshuo-entry .entry-content p{
+	text-align:justify;
+	color:#777;
 }
 
 

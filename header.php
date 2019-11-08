@@ -67,11 +67,13 @@
 			
 
 			<div id="menu-box">
-				<?php wp_nav_menu(); ?>
-
+				<h3><i class="fa fa-link" aria-hidden="true"></i>MENU</h3>
+				<?php wp_nav_menu(array( 'theme_location'   =>'header_menu')); ?>
+				<h3><i class="fa fa-link" aria-hidden="true"></i>PAGE</h3>
+				<?php wp_nav_menu(array( 'theme_location'   =>'page_menu')); ?>
+				<h3><i class="fa fa-link" aria-hidden="true"></i>SOCIAL</h3>
 				<div id="social-icon">
 					<ul>
-
 						<li>
 							<a href="http://wpa.qq.com/msgrd?v=3&uin=1103983266&site=qq&menu=yes" target="_blank"><i class="fa fa-qq" aria-hidden="true"></i></a>
 						</li>
@@ -80,13 +82,13 @@
 					
 						</li>
 						<li>
-							<a href="https://github.com/DolgenLee"><i class="fa fa-github" aria-hidden="true"></i></i></a>
+							<a href="https://github.com/DolgenLee"><i class="fa fa-github" aria-hidden="true"></i></a>
 						</li>
 						<li>
-							<a href="<?php echo $wintery_get['social_icon_4_link'];?>"><i class="fa fa-twitter" aria-hidden="true"></i></i></a>
+							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></i></a>
+							<a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
 						</li>
 					</ul>
 					<div id="weixin" style="display:none"><img src="https://doopee-1251414445.cos.ap-shanghai.myqcloud.com/wp-content/uploads/2019/10/1571711661-123_%E7%9C%8B%E5%9B%BE%E7%8E%8B-e1571711670460.jpg" width="150px"/></div>

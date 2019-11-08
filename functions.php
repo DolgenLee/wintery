@@ -1,9 +1,13 @@
 <?php 
 
 //注册一个菜单
-register_nav_menu( 'header-menu', '导航' );   
+register_nav_menu( 'header_menu', '导航' );   
 
-
+register_nav_menus( array(
+	'links_menu' => '友链导航',
+	'page_menu' => '页面导航',
+	'social_menu' => '社交导航'
+) );
 //文章显示摘要
 function wpdocs_custom_excerpt_length( $length ) {
     return 180;

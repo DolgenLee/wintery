@@ -9,9 +9,7 @@
 				<div id="index-note" class="post-text">
 					<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
 					<p class="note-text">
-
 						背影会解释我所有的取向，今后我与自己流浪
-
 				</p>
 				</div>
 
@@ -29,25 +27,7 @@
 								 </a>
 							</h2>
 								
-							<ul class="metadata-top">
-									<li class="auther">
-										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
-											<?php echo get_avatar( get_the_author_email(), '60' );?>
-											<?php the_author(); ?>
-										</a>
-									</li>
-									<li><i class="fa fa-clock-o "></i><?php the_time(); ?></li>
-									<li class="post-category">
-										<i class="fa fa-folder-o"></i><?php the_category(',') ?>
-									</li>
-									<li>
-										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-										
-										<?php edit_post_link('编辑此文', '', ''); ?>
-										
-										
-										</li>	
-							</ul>
+
 
 
 							<div class="entry">
@@ -57,10 +37,25 @@
 							</div>
 							<div class="post-img">
 								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
-									<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="300"/><?php }?>
+									<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="auto"/><?php }?>
 								</a>
 							</div>
+							<ul class="metadata-bottom">
+									<li class="auther">
+										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
+											<?php echo get_avatar( get_the_author_email(), '60' );?>
+											<?php the_author(); ?>
+										</a>
+									</li>
+									<li class="post-category">
+										<i class="fa fa-folder-o"></i><?php the_category('or') ?>
+									</li>
+									<li><i class="fa fa-clock-o "></i><?php the_time('Y年n月j日'); ?></li>
 
+									<li>
+										<?php edit_post_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>编辑此文', '', ''); ?>
+									</li>	
+							</ul>
 							<div class="metadata-bottom">
 										<li>
 											<i class="fa fa-comment-o"></i><?php comments_popup_link('暂无评论', '1 条评论', '% 条评论'); ?>
