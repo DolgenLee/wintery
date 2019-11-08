@@ -129,11 +129,11 @@ function switchNightMode(){
 			
 
 			<div id="menu-box">
-				<h3><i class="fa fa-link" aria-hidden="true"></i>MENU</h3>
+				<h4><i class="fa fa-link" aria-hidden="true"></i>MENU</h4>
 				<?php wp_nav_menu(array( 'theme_location'   =>'header_menu')); ?>
-				<h3><i class="fa fa-link" aria-hidden="true"></i>PAGE</h3>
+				<h4><i class="fa fa-link" aria-hidden="true"></i>PAGE</h4>
 				<?php wp_nav_menu(array( 'theme_location'   =>'page_menu')); ?>
-				<h3><i class="fa fa-link" aria-hidden="true"></i>SOCIAL</h3>
+				<h4><i class="fa fa-link" aria-hidden="true"></i>SOCIAL</h4>
 				<div id="social-icon">
 					<ul>
 						<li>

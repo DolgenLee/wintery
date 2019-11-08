@@ -8,11 +8,6 @@ Auther url:https://doopee.cn
  */
 
 
-
-
-
-
-
 /*滚动条*/
 body::-webkit-scrollbar {/*滚动条整体样式*/
         width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
@@ -89,7 +84,6 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	}
 	#logo p{
 		font-size: 12px;
-		color: #888;
 	}
 	#container{
 		clear: both;
@@ -217,7 +211,6 @@ body.night #menu-box,body.night #social-icon li a{
 	}
 	#logo p{
 		font-size: 12px;
-		color: #888;
 	}
 	#container{
 		clear: both;
@@ -260,9 +253,6 @@ body.night #menu-box,body.night #social-icon li a{
 		margin: 0;
 		padding:0;
 		color:#17bf63;
-	}
-	h2{
-		font-size: 16px;
 	}
 	.post-text{
 	padding:20px;
@@ -618,7 +608,8 @@ body.night #menu-box,body.night #social-icon li a{
 /*开始通用样式*/
 
 *{
-	font-family: "Verdana","Georgia",STHeiti Light,"Microsoft YaHei","黑体","宋体",sans-serif;
+	
+	font-family: "Source Sans Pro","Hiragino Sans GB","Microsoft Yahei",SimSun,Helvetica,Arial,Sans-serif,monospace；
 }
 
 h1, h2, h3, h4, h5, h6, blockquote, p,a,ul,li{
@@ -626,31 +617,57 @@ h1, h2, h3, h4, h5, h6, blockquote, p,a,ul,li{
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	color:#444;
+	color:#666;
 }
+
+h1,h2,h3,h4,h5,h6{
+	margin-bottom:10px;
+}
+h1{
+	font-size:22px;
+}
+h2{
+	font-size:18px;
+}
+h3{
+	font-size:15px;
+}
+h4{
+	font-size:14px;
+}
+h5{
+	font-size:12px;
+}
+h{
+	font-size:10px;
+}
+
+
+body{
+	font-size: 13px;
+	margin: 0 auto;
+	line-height: 2.2em;
+	letter-spacing:0.05em;
+}
+
+
 i{
 	padding-right: 5px;
 }
-
+a{
+	color:#333;
+}
 a:link{
-	color:#222;
+	color:#333;
 }
 a:hover{
 	color:#17bf63;
-	font-weight: bold;
 }
 a:active{
 	color:#17bf63;
-	font-weight: bold;
-}
-	body{
-	font-size: 14px;
-	margin: 0 auto;
-	line-height: 1.8em;
-	letter-spacing:0.1em;
 }
 
-	#social-icon i{
+#social-icon i{
 		margin: 0;
 		padding:0;
 		color:#17bf63;
@@ -698,27 +715,29 @@ a:active{
 	margin-top:25px;
 }
 
-	.menu{
-		font-size: 16px;
-		padding:10px 0;
+.menu{
+		font-size: 14px;
 	}
 
-
-	.menu li{
+.menu li{
 		padding:0 0 10px 0;
-	}
+		color:#888;
+}
 .menu li a i{
 	padding:0;
 	margin:0;
 }
-	.menu li a:hover{
+.menu li a{
+	color:#888;
+}
+.menu li a:hover{
 		color: #17bf63;
 		background-color: #e7f8ef;
 		border-radius: 25px;
 		padding: 5px 15px 5px 15px;
 		margin-left: -15px;
 	}
-	.menu li a:active{
+.menu li a:active{
 		color: #fff;
 		background-color: #13a455;
 		border-radius: 25px;
@@ -776,12 +795,12 @@ a:active{
 	height: auto;
 }
 .entry{
-
 	text-align: justify;
+	width:100%;
 }
 .entry img{
 	width: 100%;
-	margin:5px 0 5px 0;
+	margin:5px auto;
 	box-shadow: 0 0 5px #e1e1e1;
 }
 .entry p{
@@ -864,13 +883,12 @@ padding:1em 0 1em 0;
 	padding: 20px;
 	text-align: justify;
 }
-.tag_cloud h3{
-	padding-bottom:10px;
+.tag_cloud h4,.links h4{
 	color:#17bf63;
 }
 .tag_cloud a{
 	margin-right: 5px;
-	color: #999;
+	color: #888;
 }
 
 .links{
@@ -879,13 +897,6 @@ padding:1em 0 1em 0;
 	border-radius: 20px;
 	padding: 20px;
 	text-align: justify;
-}
-.links h3{
-	color:#17bf63;
-	padding-bottom:10px; 
-}
-.links a{
-	color: #999;
 }
 
 
@@ -1074,11 +1085,16 @@ padding:1em 0 1em 0;
    padding: 15px;
    width: 200px;
    line-height: 1.5em;
+	margin-top:10px;
+}
+body.night #article-index{
+	background:#3b4853;
 }
 #article-index strong {
    border-bottom: 1px dashed #DDDDDD;
    display: block;
    font-size: 14px;
+	color:#17bf63;
 }
 #index-ul {
    margin: 0;
@@ -1091,6 +1107,13 @@ padding:1em 0 1em 0;
    padding: 0;
    margin-left: 15px;
    font-size: 12px;
+	line-height:2em;
+}
+#index-ul li a{
+	color:#888;
+}
+body.night #index-ul li a{
+	color:#d3d6d8;
 }
 
 
@@ -1147,6 +1170,13 @@ body.night *{
 	color:#d3d6d8;
 }
 
+
+body.night a{
+	color:#d3d6d8
+}
+
+
+
 body.night img {
     filter: brightness(90%);
 }
@@ -1194,7 +1224,6 @@ body.night #comments-input input,body.night #comment{
 }
 body.night #comment{
 	color:#fafafa;
-
 }
 
 body.night .auther-copy p,body.night .auther-copy p i{

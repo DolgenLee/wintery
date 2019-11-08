@@ -5,7 +5,7 @@
 
 			<div id="index-note" class="post-text">
 				<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
-				<p class="note-text">背影会解释我所有的去向,今后我与自己流浪</p>
+				<p class="note-text">背影会解释我所有去向,今后我与自己流浪</p>
 			</div>
 
 
@@ -46,9 +46,7 @@
 									</li>
 									<li><i class="fa fa-clock-o "></i><?php the_time('Y年n月j日'); ?></li>
 
-									<li>
-										<?php edit_post_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>编辑此文', '', ''); ?>
-									</li>	
+	
 							</ul>
 							<div class="metadata-bottom">
 										<li>
