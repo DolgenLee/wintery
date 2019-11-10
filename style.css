@@ -1,7 +1,7 @@
 /*
 Theme Name:wintery
 Theme url:https://doopee.cn
-Description: winter is coming soon
+Description: winter is coming soon.
 Version:2.5
 Author:DolgenLee
 Auther url:https://doopee.cn
@@ -52,7 +52,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 	.logo-img{
 		position: relative;
 		float: left;
-		top:10px;
+		top:5px;
 	}
 	#logo a img{
 	width:50px;
@@ -67,7 +67,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
 
     	float: right;
     	position: relative;
-    	top:30px;
+    	top:20px;
     }
 
 	.mobile-btn{
