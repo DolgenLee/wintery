@@ -3,9 +3,11 @@
 	<div id="container">
 
 
-			<div id="index-note" class="post-text">
-				<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
-				<p class="note-text">背影会解释我所有去向,今后我与自己流浪</p>
+			<div id="index-note" >
+					
+						<span class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+						<span class="note-text">背影会解释我所有去向,今后我与自己流浪</span>
+					
 			</div>
 
 
@@ -21,9 +23,6 @@
 									<?php the_title(); ?>
 								 </a>
 							</h2>
-								
-
-
 
 							<div class="entry">
 							<?php the_excerpt(); ?>
@@ -34,32 +33,17 @@
 								<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="300"/><?php }?>
 								</a>
 							</div>
-							<ul class="metadata-bottom">
-									<li class="auther">
-										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
-											<?php echo get_avatar( get_the_author_email(), '60' );?>
-											<?php the_author(); ?>
-										</a>
-									</li>
+								<ul class="metadata">
+							
 									<li class="post-category">
 										<i class="fa fa-folder-o"></i><?php the_category('or') ?>
 									</li>
 									<li><i class="fa fa-clock-o "></i><?php the_time('Y年n月j日'); ?></li>
-
-	
-							</ul>
-							<div class="metadata-bottom">
-										<li>
-											<i class="fa fa-comment-o"></i><?php comments_popup_link('暂无评论', '1 条评论', '% 条评论'); ?>
-										</li>
+									
 										<li>
 											<i class="fa fa-pencil-square-o" aria-hidden="true"></i><?php echo zm_count_words($text); ?>
 										</li>
-										<li>
-											<i class="fa fa-paper-plane-o"></i><a href="<?php the_permalink() ?>">继续阅读 </a>
-										</li>
-										
-							</div>
+							</ul>
 							
 						</div>
 						

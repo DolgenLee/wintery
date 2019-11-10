@@ -15,6 +15,17 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
+//侧边栏
+register_sidebar( array(
+'name' => __( '右边栏', 'Bing' ),
+'id' => 'widget_default',
+'description' => __( '侧边栏的描述', 'Bing' ),
+'before_widget' => '<div class="widget %2$s">',
+'after_widget' => '</div>',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>'
+) );
+
 //调用缩略图
 function get_first_image() {
 global $post;
@@ -35,11 +46,10 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 
-//禁用古登堡
-add_filter('use_block_editor_for_post', '__return_false');
 
 
-//添加自定义顶部
+
+//添加自定义头像
 //
 add_theme_support( 'custom-logo' );
 function themename_custom_logo_setup() {
@@ -65,7 +75,6 @@ function zm_count_words ($text) {
 	}
 }
 
-
 //WordPress 文章分页改造
 add_filter('wp_link_pages_args', 'fanly_wp_link_pages_args_next_and_number');
 function fanly_wp_link_pages_args_next_and_number($args){
@@ -81,31 +90,25 @@ function fanly_wp_link_pages_args_next_and_number($args){
 }
 
 
-
+//文章目录功能
 function article_index($content) {
    $matches = array();
    $ul_li = '';
    $r = "/<h3>([^<]+)<\/h3>/im";
-
-
-
+	
    if(preg_match_all($r, $content, $matches)) {
        foreach($matches[1] as $num => $title) {
-           $content = str_replace($matches[0][$num], '<h4 id="title-'.$num.'">'.$title.'</h4>', $content);
+           $content = str_replace($matches[0][$num], '<h3 id="title-'.$num.'">'.$title.'</h3>', $content);
            $ul_li .= '<li><a href="#title-'.$num.'" title="'.$title.'">'.$title."</a></li>\n";
        }
-       $content = "\n<div id=\"article-index\">
-               <strong>文章目录</strong>
+       $content =  "\n<div id=\"article-index\">
+               <h4>文章目录</h4>
                <ul id=\"index-ul\">\n" . $ul_li . "</ul>
            </div>\n" . $content;
    }
    return $content;
 }
 add_filter( "the_content", "article_index" );
-
-
-
-
 
 
 

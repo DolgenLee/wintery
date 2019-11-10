@@ -10,9 +10,11 @@ handsome主题介绍与购买：https://www.ihewro.com/archives/489/
 get_header(); ?>
 
 <div id="container">
-			<div id="index-note" class="post-text">
-				<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
-				<p class="note-text">背影会解释我所有的去向,今后我与自己流浪</p>
+			<div id="index-note">
+					
+						<span class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+						<span class="note-text">背影会解释我所有去向,今后我与自己流浪</span>
+					
 			</div>
 
 			
@@ -45,7 +47,7 @@ get_header(); ?>
 			                    $dataList = updateData($userID,$filePath,$type);
 			                }else{//读取缓存文件中的数据
 			                    $dataList = $data->data;
-			                    echo '<script>$(function(){$(".douban_tips").text("以下数据最后更新于'.$lastUpdateTime.'")})</script>';
+			                    echo '<script>$(function(){$(".douban_tips").text("数据更新于'.$lastUpdateTime.'")})</script>';
 			                }
 			            }
 			        }
@@ -181,10 +183,7 @@ get_header(); ?>
 			<div class="douban-wrapper">
 					<div class="douban">
 						<h2><i class="fa fa-book" aria-hidden="true"></i>我的书单</h2>
-                        <div class="douban-note">
-                             <i class="fa fa-clock-o" aria-hidden="true"></i>
-                             <small class="letterspacing douban_tips"></small>
-                        </div>
+
 
                          <div class="douban-section">
                                  <?php $readList = getDoubanData("$doubanID","book");
@@ -205,16 +204,13 @@ get_header(); ?>
 					</div>
 
 			
-			<div class="clearfix"></div>
+				<div class="clearfix"></div>
 	
 					
 
 						<div class="douban">
 							<h2><i class="fa fa-film" aria-hidden="true"></i>我的观影</h2>
-                         	<div class="douban-note">
-                            	<i class="fa fa-clock-o" aria-hidden="true"></i>
-                            	<small class="letterspacing douban_tips"></small>
-                        	</div>
+
                         </div>
 
                         <div class="douban-section">

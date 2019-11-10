@@ -20,7 +20,7 @@ $oddcomment = 'alt';
 <!-- You can start editing here. -->
 
 <?php if ($comments) : ?>
-	<h3 id="comments"><?php comments_number('暂无回复', '1条回复', '% 条回复' );?>  </h3>
+	<h5 id="comments"><?php comments_number('暂无回复', '1条回复', '% 条回复' );?>  </h5>
 
 <ol class="commentlist">
 <?php foreach ($comments as $comment) : ?>
@@ -60,7 +60,7 @@ $oddcomment = 'alt';
 
 <?php if ('open' == $post->comment_status) : ?>
 
-		<h3 id="respond"><i class="fa fa-comment-o" aria-hidden="true"></i>说点啥</h3>
+		<h5 id="respond"><i class="fa fa-comment-o" aria-hidden="true"></i>说点啥</h5>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>请 <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">登录</a>后留言</p>

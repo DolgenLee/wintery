@@ -9,9 +9,9 @@ url: http://www.tang1314.com/shuoshuo
 get_header(); ?>
 
 	<div id="container">
-			<div id="index-note" class="post-text">
-				<p class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></p>
-				<p class="note-text">背影会解释我所有的去向,今后我与自己流浪</p>
+			<div id="index-note" >
+				<span class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+				<span class="note-text">背影会解释我所有的去向,今后我与自己流浪</span>
 			</div>
 			
 
@@ -26,17 +26,9 @@ get_header(); ?>
 
 							</div>
 					
-							<div class="metadata-bottom">
-									<li class="auther">
-										<a href='<?php the_author_posts_link(); ?>' target="_blanket" > 
-											<?php echo get_avatar( get_the_author_email(), '60' );?>
-											<?php the_author(); ?>
-										</a>
-									</li>
-									<i class="fa fa-clock-o "></i><?php the_time('n月j日G:i'); ?>
-									<li>
-										<?php edit_post_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>编辑此文', '', ''); ?>
-									</li>	
+							<div class="metadata">
+
+									<li><i class="fa fa-clock-o "></i><?php the_time('n月j日G:i'); ?></li>
 								
 							</div>
 					
