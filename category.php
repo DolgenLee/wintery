@@ -1,15 +1,7 @@
 <?php get_header(); ?>
-
+<?php include 'index-note.php';?>
+<div class="clearfix"></div>
 	<div id="container">
-
-
-			<div id="index-note" >
-					
-						<span class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
-						<span class="note-text">背影会解释我所有去向,今后我与自己流浪</span>
-					
-			</div>
-
 
 		<div class="post-wrapper">
 			<?php if(have_posts()) : ?>
@@ -23,17 +15,7 @@
 									<?php the_title(); ?>
 								 </a>
 							</h2>
-
-							<div class="entry">
-							<?php the_excerpt(); ?>
-
-							</div>
-							<div class="post-img">
-								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
-								<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="300"/><?php }?>
-								</a>
-							</div>
-								<ul class="metadata">
+							<ul class="metadata">
 							
 									<li class="post-category">
 										<i class="fa fa-folder-o"></i><?php the_category('or') ?>
@@ -44,6 +26,16 @@
 											<i class="fa fa-pencil-square-o" aria-hidden="true"></i><?php echo zm_count_words($text); ?>
 										</li>
 							</ul>
+							<div class="entry">
+							<?php the_excerpt(); ?>
+
+							</div>
+							<div class="post-img">
+								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
+								<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="300"/><?php }?>
+								</a>
+							</div>
+
 							
 						</div>
 						

@@ -1,12 +1,7 @@
 <?php get_header(); ?>
-	
-	<div id="container">
-			<div id="index-note" >
-					
-						<span class="note-icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span>
-						<span class="note-text">背影会解释我所有去向,今后我与自己流浪</span>
-					
-			</div>
+<?php include 'index-note.php';?>
+<div class="clearfix"></div>
+<div id="container">
 
 		<div class="post-wrapper">
 		<?php if(have_posts()) : ?>
@@ -65,10 +60,10 @@
 										<li>
 											<small id="wechatpay"><i class="fa fa-thumbs-up" aria-hidden="true"></i>微信赞赏</small>
 										</li>
-										<li style="display:none;width:50%;float:left;padding-top:40px" id="alipay-img" >
+										<li style="display:none;width:50%;float:left;" id="alipay-img" >
 											<img src="https://doopee-1251414445.cos.ap-shanghai.myqcloud.com/wp-content/uploads/2019/11/1573130370-alipay.jpg" width="180px">
 										</li>
-										<li style="display:none;width:50%;float:right;padding-top:40px" id="wechatpay-img">
+										<li style="display:none;width:50%;float:right;" id="wechatpay-img">
 											<img src="https://doopee-1251414445.cos.ap-shanghai.myqcloud.com/wp-content/uploads/2019/10/1571639922-wxds-e1571639933327.jpg" width="180px">
 										</li>
 							
@@ -87,7 +82,7 @@
 												        $categoryIDS = implode(",", $categoryIDS);
 												?>
 										<li><small><?php if (get_previous_post($categoryIDS)) { previous_post_link('%link','<i class="fa fa-chevron-left" aria-hidden="true"></i>上一篇',true);} else { echo "已是最后文章";} ?></small></li>
-										<li><small><?php if (get_next_post($categoryIDS)) { next_post_link('%link','<i class="fa fa-chevron-right" aria-hidden="true"></i>下一篇',true);} else { echo "已是最新文章";} ?></small></li>
+										<li><small><?php if (get_next_post($categoryIDS)) { next_post_link('%link','下一篇 <i class="fa fa-chevron-right" aria-hidden="true"></i>',true);} else { echo "已是最新文章";} ?></small></li>
 							
 					</div>					
 					<div class="comments-template">

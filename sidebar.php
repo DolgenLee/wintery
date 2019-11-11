@@ -1,10 +1,10 @@
 	<div id="sidebar">
 			<ul>
 
-				<li class="tag_cloud">
+				<!--<li class="tag_cloud">
 				<h4><i class="fa fa-tags" aria-hidden="true"></i>TAGS</h4>
 				<?php wp_tag_cloud('number=30&orderby=count&order=DESC&smallest=10&largest=14&unit=px'); ?>
-				</li>
+				</li>-->
 				<li class="links">
 				<h4><i class="fa fa-link" aria-hidden="true"></i>LINKS</h4>
 					<?php wp_nav_menu(array( 'theme_location'   =>'links_menu')); ?>
@@ -16,8 +16,8 @@
 			
 	</div>
 
-
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+
 
 <script>
 								$(function(){
