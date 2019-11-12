@@ -46,7 +46,7 @@
 							</div>
 							<div class="auther-copy">
 							
-									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>本站内容如未特别声明均为原创，谢绝任何个人、机构抓取、转载。
+									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>本站原创采用创作共用版权协议, 要求署名、非商业用途和保持一致。
 							
 							</div>		
 						</div>	

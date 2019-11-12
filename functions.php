@@ -101,22 +101,14 @@ function article_index($content) {
            $content = str_replace($matches[0][$num], '<h3 id="title-'.$num.'">'.$title.'</h3>', $content);
            $ul_li .= '<li><a href="#title-'.$num.'" title="'.$title.'">'.$title."</a></li>\n";
        }
-       $content =  "\n<div id=\"article-index\">
+       $content =  $content ."\n<div id=\"article-index\">
                <h4>文章目录</h4>
                <ul id=\"index-ul\">\n" . $ul_li . "</ul>
-           </div>\n" . $content;
+           </div>\n" ;
    }
    return $content;
 }
 add_filter( "the_content", "article_index" );
-
-
-
-
-?>
-
-
-<?php
 
 //说说
  add_action('init', 'my_custom_init');
@@ -146,4 +138,11 @@ add_filter( "the_content", "article_index" );
  'supports' => array('title','editor','author') );
  register_post_type('shuoshuo',$args); }
 
- 
+//自定义登录页
+function custom_login() {   
+echo '<link rel="stylesheet" tyssspe="text/css" href="' . get_bloginfo('template_directory') . '/custom_login/custom_login.css" />'; }   
+add_action('login_head', 'custom_login');
+function custom_loginlogo_url($url) {
+return 'https://doopee.cn';
+}
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );

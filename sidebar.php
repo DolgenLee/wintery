@@ -130,3 +130,11 @@
 		}
 	}
 	</script>
+<script>
+var s1 = '2017-10-01';//设置为你的建站时间
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>

@@ -1,0 +1,80 @@
+.login {
+	font-family: 'Montserrat', sans-serif;
+	text-rendering : optimizeLegibility;
+	-webkit-font-smoothing : antialiased;
+	background-color: #CAF0D3; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #d7f0ca , #caecf0);
+}
+
+.login h1 {
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
+#loginform{
+	border-radius: 10px;
+	box-shadow: none;
+}
+.login form .input, .login input[type=text]{
+	border-radius: 40px;
+	box-shadow: none;
+	font-size: 16px;
+	padding:10px 20px;
+	width: 100%;
+	margin:10px 0;
+}
+.login form .input, .login form input[type=checkbox], .login input[type=text]{
+	background-color: #fff;
+	border-radius: 25px;
+}
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+	border:0;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large{
+	border-radius: 25px;
+}
+.login form .forgetmenot{
+	float: none;
+	text-align: center;
+	margin:20px 0;
+}
+.login .button-primary{
+	float: none;
+	margin-top: 10px;
+	text-align: center;
+}
+p.submit{
+	text-align: center;
+	margin-top: 20px;
+}
+#login form p.submit{
+	margin-top: 20px;
+}
+.login label{
+	font-size: 12px;
+	color:#999;
+}
+.login h1 a{   
+    background: url(logo.png) no-repeat center;
+    width: 128px;
+    height: 128px;
+      
+}
+.login #backtoblog, .login #nav{
+	padding: 0;
+	text-align: center;
+	color: #999;
+}
+.wp-core-ui .button-primary{
+	background-color: #CAF0D3; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #d7f0ca , #caecf0);
+    box-shadow: none;
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: none;
+    border:none;
+    width: 30%;
+}

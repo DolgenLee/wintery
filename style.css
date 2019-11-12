@@ -2,7 +2,7 @@
 Theme Name:wintery
 Theme url:https://doopee.cn
 Description: winter is coming soon.
-Version:2.7
+Version:2.7.2
 Author:DolgenLee
 Auther url:https://doopee.cn
  */
@@ -55,6 +55,7 @@ body::-webkit-scrollbar-track {
 		position: fixed;
 		width: 100%;
 		background: #fff;
+		z-index:9999;
 	}
 
 	#container{
@@ -116,6 +117,7 @@ body::-webkit-scrollbar-track {
 		position: fixed;
 		width: 100%;
 		margin-top: 80px;
+		z-index:9999;
 	}
 	#index-note {
 		overflow: hidden;
@@ -200,6 +202,7 @@ body::-webkit-scrollbar-track {
 		left:25%;
 		border: 1px solid #e6ecf0;
 		border-width: 0px 1px 1px 1px;
+				z-index:9999;
 	}
 	#index-note {
 		overflow: hidden;
@@ -210,6 +213,9 @@ body::-webkit-scrollbar-track {
 
 	.douban-wrapper {
 		padding: 20px 40px;
+	}
+		.post-wrapper{
+		margin-top: 74.4px;
 	}
 body.night #container{
 	border-width:0 0 1px 0;
@@ -230,6 +236,7 @@ body.night #index-note-wrapper{
 		position: fixed;
 		overflow: hidden;
 		text-align: right;
+
 	}
 
 	#container {
@@ -277,6 +284,7 @@ body.night #index-note-wrapper{
 		left:32.5%;
 		border: 1px solid #e6ecf0;
 		border-width: 0px 1px 1px 1px;
+		z-index:9999;
 	}
 	#article-index {
 		left: 70%;
@@ -1937,7 +1945,6 @@ body.night .metadata-bottom-single li{
 .wp-block-gallery .blocks-gallery-image figure,
     .wp-block-gallery .blocks-gallery-item figure {
 	margin: 0;
-	height: 100%;
 }
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
@@ -1953,13 +1960,8 @@ body.night .metadata-bottom-single li{
     .wp-block-gallery .blocks-gallery-item img {
 	display: block;
 	max-width: 100%;
-	height: auto;
 }
 
-.wp-block-gallery .blocks-gallery-image img,
-    .wp-block-gallery .blocks-gallery-item img {
-	width: 100%;
-}
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
 	.wp-block-gallery .blocks-gallery-image img,
@@ -1987,19 +1989,14 @@ body.night .metadata-bottom-single li{
 	display: inline;
 }
 
-.wp-block-gallery.is-cropped .blocks-gallery-image a,
-  .wp-block-gallery.is-cropped .blocks-gallery-image img,
-  .wp-block-gallery.is-cropped .blocks-gallery-item a,
-  .wp-block-gallery.is-cropped .blocks-gallery-item img {
-	width: 100%;
-}
+
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
 	.wp-block-gallery.is-cropped .blocks-gallery-image a,
       .wp-block-gallery.is-cropped .blocks-gallery-image img,
       .wp-block-gallery.is-cropped .blocks-gallery-item a,
       .wp-block-gallery.is-cropped .blocks-gallery-item img {
-		height: 100%;
+	
 		flex: 1;
 		-o-object-fit: cover;
 		object-fit: cover;
