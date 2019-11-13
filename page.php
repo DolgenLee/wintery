@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php include 'index-note.php';?>
 <div class="clearfix"></div>
-	<div id="container">
-
+<div id="container">
+	<div id="page-wrapper">
 		<?php if(have_posts()) : ?>
 		<?php while(have_posts()) : the_post(); ?>	
 			<div class="post" id="post-<?php the_ID(); ?>">
@@ -29,9 +29,6 @@
 
 						</div>
 
-
-						
-						
 					</div>
 					
 			</div>
@@ -40,15 +37,11 @@
 
 
 			<?php endif; ?>
-		
-			<?php get_footer();?>
+			
+			
 	</div>
 
-	
-
-
-
-
+	<?php get_footer();?>
 
 
 </div>

@@ -46,12 +46,13 @@
 							</div>
 							<div class="auther-copy">
 							
-									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>本站原创采用创作共用版权协议, 要求署名、非商业用途和保持一致。
+									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><?php echo wintery('postcopy')?>
 							
 							</div>		
 						</div>	
 
 					</div>
+					
 					<div class="metadata-bottom-single">
 						
 										<li >
@@ -61,10 +62,10 @@
 											<small id="wechatpay"><i class="fa fa-thumbs-up" aria-hidden="true"></i>微信赞赏</small>
 										</li>
 										<li style="display:none;width:50%;float:left;" id="alipay-img" >
-											<img src="https://doopee-1251414445.cos.ap-shanghai.myqcloud.com/wp-content/uploads/2019/11/1573130370-alipay.jpg" width="180px">
+											<img src="<?php echo wintery('alipay_qrcode')?>" width="180px">
 										</li>
 										<li style="display:none;width:50%;float:right;" id="wechatpay-img">
-											<img src="https://doopee-1251414445.cos.ap-shanghai.myqcloud.com/wp-content/uploads/2019/10/1571639922-wxds-e1571639933327.jpg" width="180px">
+											<img src="<?php echo wintery('wechat_qrcode')?>" width="180px">
 										</li>
 							
 						

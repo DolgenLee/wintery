@@ -11,7 +11,6 @@ get_header(); ?>
 <?php include 'index-note.php';?>
 <div class="clearfix"></div>
 <div id="container">
-
 	<?php
 			require 'douban-support.php';
 
@@ -176,7 +175,10 @@ get_header(); ?>
 			<div class="douban-wrapper">
 					<div class="douban">
 						<h2><i class="fa fa-book" aria-hidden="true"></i>我的书单</h2>
-
+								<div class="douban-note">
+                                        <i class="fontello fontello-clock-o m-xs" aria-hidden="true"></i>
+                                        <small class="letterspacing douban_tips"></small>
+								</div>
 
                          <div class="douban-section">
                                  <?php $readList = getDoubanData("$doubanID","book");
@@ -203,6 +205,11 @@ get_header(); ?>
 
 						<div class="douban">
 							<h2><i class="fa fa-film" aria-hidden="true"></i>我的观影</h2>
+								<div class="douban-note">
+                                        <i class="fontello fontello-clock-o m-xs" aria-hidden="true"></i>
+                                        <small class="letterspacing douban_tips"></small>
+								</div>
+
 
                         </div>
 

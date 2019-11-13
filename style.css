@@ -1145,22 +1145,28 @@ body.night #index-ul li a {
 	height: 20px;
 	border-radius: 10px;
 }
-
+.shuoshuo-wrapper{
+		margin-top: 74.4px;
+	
+}
 .shuoshuo-entry {
 	border-radius: 15px;
 	background: #f5f8fa;
 	padding: 10px;
 	margin-bottom: 10px;
-	margin-top: 74.4px;
-}
 
+}
 .shuoshuo-entry .entry-content p {
 	text-align: justify;
 	color: #777;
 }
 
-
+#page-wrapper{
+	margin-top: 74.4px;
+}
 /*--------------豆瓣书单页面css-----------------------------------------*/
+
+
 
 .douban {
 	width: 100%;

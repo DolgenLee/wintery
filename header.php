@@ -64,13 +64,13 @@
 								<a href="https://github.com/DolgenLee"><i class="fa fa-github" aria-hidden="true"></i></a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+								<a href=""><i class="fa fa-weibo" aria-hidden="true"></i></a>
 							</li>
 						</ul>
-						<div id="weixin" style="display:none" style="clear:both;"></br></br>此处为小程序二维码</br>如有需要请qq联系</br><img src="" width="150px"/></div>
+						<div id="weixin" style="display:none" style="clear:both;"></br><img src="<?php echo wintery('wechat_img')?>" width="150px"/></div>
 
 					</div>
 				</div>

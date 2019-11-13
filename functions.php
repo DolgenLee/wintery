@@ -35,7 +35,7 @@ ob_end_clean();
 $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 $first_img = $matches [1] [0];
 if(empty($first_img)){ //Defines a default image
-$first_img = bloginfo('template_url') . "/img/post-default.jpg";
+$first_img = bloginfo('template_url') . "/assets/images/post-default.jpg";
 };
 return $first_img;
 }
@@ -146,3 +146,8 @@ function custom_loginlogo_url($url) {
 return 'https://doopee.cn';
 }
 add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+//引入optionframe
+if (!function_exists('optionsframework_init')){
+  define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri().'/assets/inc/');
+  require_once dirname(__FILE__).'/assets/inc/options-framework.php';
+}
