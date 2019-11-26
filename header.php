@@ -15,6 +15,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+	<style type="text/css">
+		:root{
+			--maincolor:<?php echo wintery('main_color')?>;
+		};
+
+
+	</style>
 	<script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -25,6 +32,13 @@
 	})();
 	</script>
 
+<!--
+https://doopee.cn/356.html
+主题作者为dolgenlee，主题唯一主页为https://doopee.cn,售后qq：1103983266
+其他任何渠道购买、获取的主题均为盗版。
+使用盗版主题不享有售后服务、升级服务，且造成的任何问题与损失主题原作者均不负责，敬请悉知。
+如有发现其他售卖本主题的情况，欢迎通知作者，可享受wintery主题75折购买价。
+-->
 </head>
 <body class="<?php echo($_COOKIE['night'] == '1' ? 'night' : ''); ?>">
 	<?php global $wintery_get; ?>
@@ -52,26 +66,8 @@
 					<?php wp_nav_menu(array( 'theme_location'   =>'page_menu')); ?>
 					
 					<div id="social-icon">
-						<ul>
-							<li>
-								<a href="http://wpa.qq.com/msgrd?v=3&uin=1103983266&site=qq&menu=yes" target="_blank"><i class="fa fa-qq" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href="#"><i id="weixin-icon" class="fa fa-weixin" aria-hidden="true"></i></a>
-						
-							</li>
-							<li>
-								<a href="https://github.com/DolgenLee"><i class="fa fa-github" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href=""><i class="fa fa-weibo" aria-hidden="true"></i></a>
-							</li>
-						</ul>
+						<?php wp_nav_menu(array( 'theme_location'   =>'social_menu')); ?>
 						<div id="weixin" style="display:none" style="clear:both;"></br><img src="<?php echo wintery('wechat_img')?>" width="150px"/></div>
-
 					</div>
 				</div>
 				

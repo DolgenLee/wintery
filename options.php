@@ -18,85 +18,24 @@ function optionsframework_option_name() {
  * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
  */
 
+
 function optionsframework_options() {
+//-------------------这里开始是主题后台有关函数-----------------------
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+////---------------------------------------------------------------------
+//---------------------------------------------------------------------
+////---------------------------------------------------------------------
+//---------------------------------------------------------------------
+////---------------------------------------------------------------------
+//---------------------------------------------------------------------
 
-	// Test data
-	$test_array = array(
-		'one' => __( 'One', 'theme-textdomain' ),
-		'two' => __( 'Two', 'theme-textdomain' ),
-		'three' => __( 'Three', 'theme-textdomain' ),
-		'four' => __( 'Four', 'theme-textdomain' ),
-		'five' => __( 'Five', 'theme-textdomain' )
+	$maincolor = array(
+		'#17bf63' => __( '芳草绿', 'theme-textdomain' ),
+		'#1da1f2' => __( '天空蓝', 'theme-textdomain' ),
+		'#f45d22' => __( '赤火橙', 'theme-textdomain' ),
+		'#794bc4' => __( '丁香紫', 'theme-textdomain' )
 	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __( 'French Toast', 'theme-textdomain' ),
-		'two' => __( 'Pancake', 'theme-textdomain' ),
-		'three' => __( 'Omelette', 'theme-textdomain' ),
-		'four' => __( 'Crepe', 'theme-textdomain' ),
-		'five' => __( 'Waffle', 'theme-textdomain' )
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-	);
-
-	// Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
-
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
-
-
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
-
-	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
-
-	$options = array();
-
-
-
 //-------------------这里开始是主题后台自定义设置项-----------------------
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
@@ -106,12 +45,31 @@ function optionsframework_options() {
 //---------------------------------------------------------------------
 ////---------------------------------------------------------------------
 //---------------------------------------------------------------------
-
-
 	$options[] = array(
 		'name' => __( '基础设置', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
+	$options[] = array(
+		'name' => __( '声明', 'theme-textdomain' ),
+		'desc' => __( '<a href="https://doopee.cn/356.html" target="_blanket">wintery</a>主题作者为dolgenlee，主题唯一主页为：<a href="https://doopee.cn" target="_blanket">doopee.cn</a>,售后qq：<a href="http://wpa.qq.com/msgrd?v=3&uin=1103983266&site=qq&menu=yes" target="_blanket">dolgenlee</a>。</br></br>
+			其他任何渠道购买、获取的主题均为盗版。</br></br>
+			使用盗版主题不享有售后服务、升级服务，且造成的任何问题与损失主题原作者均不负责，敬请悉知。</br></br>
+			如有发现其他售卖本主题的情况，欢迎通知作者，可享受wintery主题75折购买价。</br></br>
+			本声明长期有效  ————  2019年11月15日
+
+			', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'name' => __( '主色调', 'theme-textdomain' ),
+		'desc' => __( '选择主题高亮色', 'theme-textdomain' ),
+		'id' => 'main_color',
+		'std' => '#17bf63',
+		'type' => 'select',
+		'class' => 'mini', //mini, tiny, small
+		'options' => $maincolor
+	);
+
 
 	$options[] = array(
 		'name' => __( '顶部通知', 'theme-textdomain' ),
@@ -124,7 +82,7 @@ function optionsframework_options() {
 		'name' => __( '版权声明', 'theme-textdomain' ),
 		'desc' => __( '文章下方版权声明，默认所有文章下均显示', 'theme-textdomain' ),
 		'id' => 'postcopy',
-		'std' => '本站原创采用创作共用版权协议, 要求署名、非商业用途和保持一致。',
+		'std' => '本站原创采用创作共用版权协议, 要求署名、非商业用途和保持一致,转载请注明出处.',
 		'type' => 'text'
 	);
 	$options[] = array(
@@ -164,7 +122,7 @@ function optionsframework_options() {
 		'name' => __( '博客建立周期', 'theme-textdomain' ),
 		'desc' => __( '填写你博客创建的时间，格式参考默认值', 'theme-textdomain' ),
 		'id' => 'bloginfo-birth',
-		'std' => '20171001',
+		'std' => '2017-10-01',
 		'type' => 'text'
 	);
 	$options[] = array(

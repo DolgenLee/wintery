@@ -18,7 +18,7 @@ get_header(); ?>
 							<div class="shuoshuo-entry">
 								<h4 class="entry-title"><?php the_title(); ?></h4>
 
-								<div class="entry-content"><?php the_excerpt(); ?></div>
+								<div class="entry-content"><?php the_content(); ?></div>
 
 							</div>
 					

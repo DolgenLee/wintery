@@ -43,7 +43,7 @@
 
 				<?php endwhile; ?>
 			
-		
+			<div class="post-text">
 			<?php
 				the_posts_pagination( array(
 				    'mid_size'  => 6,
@@ -51,7 +51,7 @@
 				    'next_text' => __( '<i class="fa fa-chevron-down" aria-hidden="true"></i>', 'textdomain' ),
 				) );
 			?>
-
+			</div>
 
 			<?php endif; ?>
 			<?php get_footer();?>

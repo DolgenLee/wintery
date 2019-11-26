@@ -10,7 +10,7 @@ register_nav_menus( array(
 ) );
 //文章显示摘要
 function wpdocs_custom_excerpt_length( $length ) {
-    return 180;
+    return 120;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -35,7 +35,9 @@ ob_end_clean();
 $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 $first_img = $matches [1] [0];
 if(empty($first_img)){ //Defines a default image
-$first_img = bloginfo('template_url') . "/assets/images/post-default.jpg";
+$random = mt_rand(1, 10);
+		echo get_bloginfo ( 'stylesheet_directory' );
+		echo '/assets/images/random/'.$random.'.jpg';
 };
 return $first_img;
 }
@@ -44,10 +46,6 @@ return $first_img;
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
 }
-
-
-
-
 
 //添加自定义头像
 //
@@ -135,7 +133,7 @@ add_filter( "the_content", "article_index" );
  'capability_type' => 'post',
  'has_archive' => true, 'hierarchical' => false,
  'menu_position' => null,
- 'supports' => array('title','editor','author') );
+ 'supports' => array('title','editor','thumbnail','author') );
  register_post_type('shuoshuo',$args); }
 
 //自定义登录页
@@ -151,3 +149,5 @@ if (!function_exists('optionsframework_init')){
   define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri().'/assets/inc/');
   require_once dirname(__FILE__).'/assets/inc/options-framework.php';
 }
+global $wpdb;
+$wpdb->query("DELETE FROM wp_options WHERE option_name = 'core_updater.lock'");

@@ -2,16 +2,28 @@
 Theme Name:wintery
 Theme url:https://doopee.cn
 Description: winter is coming soon.
-Version:2.7.2
+Version:2.9.2
 Author:DolgenLee
 Auther url:https://doopee.cn
  */
+/*
+https://doopee.cn/356.html
+主题作者为dolgenlee，主题唯一主页为https://doopee.cn,售后qq：1103983266
+其他任何渠道购买、获取的主题均为盗版。
+使用盗版主题不享有售后服务、升级服务，且造成的任何问题与损失主题原作者均不负责，敬请悉知。
+如有发现其他售卖本主题的情况，欢迎通知作者，可享受wintery主题75折购买价。
+ */
+
+/*----------------颜色变量生命----------------------*/
+:root {
+  --maincolor: #1da1f2;
+}
 
 
 /*滚动条*/
 body::-webkit-scrollbar {
 /*滚动条整体样式*/
-	width: 10px;
+	width: 5px;
      /*高宽分别对应横竖滚动条的尺寸*/
 	height: 10px;
 }
@@ -116,7 +128,7 @@ body::-webkit-scrollbar-track {
 	#index-note{
 		position: fixed;
 		width: 100%;
-		margin-top: 80px;
+		margin-top: 73.6px;
 		z-index:9999;
 	}
 	#index-note {
@@ -213,8 +225,9 @@ body::-webkit-scrollbar-track {
 
 	.douban-wrapper {
 		padding: 20px 40px;
+		margin-top:74.4px;
 	}
-		.post-wrapper{
+	.post-wrapper{
 		margin-top: 74.4px;
 	}
 body.night #container{
@@ -331,13 +344,14 @@ body.night #index-note-wrapper{
 
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
-	color: #777;
+	color: #555;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	text-rendering: optimizelegibility;
 	text-align: justify;
 	font-size: 0.9em;
 	letter-spacing: 0.02em;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 /* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
@@ -364,9 +378,7 @@ audio, canvas, video {
 }
 
 /* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea {
-	font: 400 1em/1.8  Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-}
+
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -460,11 +472,11 @@ sub {
 
 /* 让链接在 hover 状态下显示下划线 */
 a {
-	color: #444;
+	color: #555;
 }
 
 a:hover {
-	color: #17bf63;
+	color: var(--maincolor);
 }
 
 
@@ -526,8 +538,8 @@ figcaption {
 }
 
 strong, b {
-	font-weight: bold;
-	color: #111;
+	font-weight: 550;
+	color: #555;
 }
 
 /* 可拖动文件添加拖动手势 */
@@ -559,9 +571,7 @@ strong, b {
 }
 
 /* 提供 serif 版本的字体设置: iOS 下中文自动 fallback 到 sans-serif */
-.serif {
-	font-family: Palatino, Optima, Georgia, serif;
-}
+
 
 /* 保证块/段落之间的空白隔行 */
 p,  pre,  ul,  ol,  dl,  form,  hr,  table,blockquote {
@@ -569,18 +579,15 @@ p,  pre,  ul,  ol,  dl,  form,  hr,  table,blockquote {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-	font-weight: 500;
-	color: #000;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-weight: 400;
+	color: #555;
 	line-height: 1.35;
+	margin-bottom: 0.3em;
 }
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
-	margin-bottom: 0.3em;
-	line-height: 1.35;
-}
+
 
 h1 {
 	font-size: 1.8em;
@@ -605,12 +612,12 @@ h5, h6 {
 /* 在文章中，应该还原 ul 和 ol 的样式 */
 .entry ul {
 	list-style: disc;
-	padding-left: 1.9em;
+	padding-left: 2em;
 }
 
 .entry ol {
 	list-style: decimal;
-	padding: 1.9em;
+	padding: 0 2em;
 }
 
 .entry li ul, .entry li ol, .entry ul, .entry ol, .entry ul, .entry ol {
@@ -709,11 +716,18 @@ i {
 }
 
 .menu li a:hover {
-	color: #17bf63;
-	background-color: #e7f8ef;
+	color: var(--maincolor);
+	background-color: #f5f8fa;
 	border-radius: 25px;
 	padding: 5px 15px 5px 15px;
 	margin-left: -15px;
+}
+#social-icon .menu li a:hover {
+	color: var(--maincolor);
+	background-color: none;
+	border-radius: 0;
+	padding:0;
+	margin-left: 0px;
 }
 
 .menu-title {
@@ -729,12 +743,13 @@ i {
 /*------------------------main------------------------------------------------*/
 
 .entry *{
-	line-height: 2.2em;
+	line-height: 2em;
 }
 .metadata {
 	font-size: 12px;
 	overflow: hidden;
 	color: #999;
+	margin-top:1em;
 }
 
 .metadata li {
@@ -747,14 +762,13 @@ i {
 
 .post-category a {
 	color: #fff;
-	background: #8cdfb1;
-	border-radius: 15px;
+	background: var(--maincolor);
 	padding: 0 5px;
 }
 
 .post-category a:hover {
-	color: #fff;
-	background: #17bf63;
+	color: #eee;
+	background: var(--maincolor);
 	border-radius: 15px;
 	padding: 0 5px 0 5px;
 }
@@ -771,18 +785,22 @@ i {
 .nav-links span {
 	color: #aaa;
 	text-align: center;
+	margin:0 0.2em;
 }
-
+.nav-links a{
+	margin:0 0.2em;
+}
 .navigation h2 {
 	display: none;
 }
 
 .auther-copy {
-	background: #8cdfb1;
-	border-radius: 20px;
-	padding: 5px 10px;
+	background: #f5f8fa;
+	
+	padding: 15px;
 	margin-top: 20px;
-	color: #fff;
+	color: #888;
+	font-size:0.9em;
 }
 
 .metadata-bottom-single li {
@@ -823,7 +841,7 @@ i {
 }
 
 .tag_cloud h4,.links h4 {
-	color: #17bf63;
+	color: var(--maincolor);
 }
 
 .tag_cloud a {
@@ -834,7 +852,7 @@ i {
 .links,.wintery-post {
 	margin-bottom: 20px;
 	background: #f5f8fa;
-	border-radius: 20px;
+	
 	padding: 20px;
 	text-align: justify;
 	max-width: 100%;
@@ -875,10 +893,10 @@ i {
 	display: none;
 	bottom: 100px;
 	right: 20px;
-	background: #17bf63;
+	background: var(--maincolor);
 	width: 40px;
 	height: 40px;
-	border-radius: 20px;
+	border-radius: 5px;
 }
 
 #back-to-top a i {
@@ -926,7 +944,6 @@ i {
 
 #comments-input li input,label {
 	width: 50%;
-	border-radius: 15px;
 	text-align: center;
 }
 
@@ -937,7 +954,6 @@ i {
 #comments-input input {
 	color: #657786;
 	height: 30px;
-	border-radius: 20px;
 	border: 1px solid #f5f8fa;
 	background: #f5f8fa;
 	margin-top: 5px;
@@ -955,7 +971,7 @@ i {
 #comment {
 	color: #657786;
 	height: 40px;
-	border-radius: 20px;
+
 	border: 1px solid #f5f8fa;
 	background: #f5f8fa;
 	margin-top: 5px;
@@ -982,8 +998,8 @@ i {
 	height: 40px;
 	width: 100%;
 	border-radius: 20px;
-	border: 1px solid #17bf63;
-	background: #17bf63;
+	border: 1px solid var(--maincolor);
+	background: var(--maincolor);
 	color: #fff;
 	margin-top: 5px;
 	padding-left: 5px;
@@ -1009,7 +1025,7 @@ i {
 }
 
 .archives li a:hover .atitle:after {
-	background: #17bf63;
+	background: var(--maincolor);
 }
 
 .archives li a span {
@@ -1069,7 +1085,7 @@ i {
 }
 
 .m-title:hover:after {
-	background: #17bf63;
+	background: var(--maincolor);
 }
 
 .m-title:before {
@@ -1097,7 +1113,7 @@ i {
 #article-index {
 	-moz-border-radius: 6px 6px 6px 6px;
 	background: #f5f8fa;
-	border-radius: 20px;
+
 	float: right;
 	padding: 20px;
 	line-height: 1.5em;
@@ -1111,7 +1127,7 @@ body.night #article-index {
 #article-index h4 {
 	border-bottom: 1px dashed #DDDDDD;
 	display: block;
-	color: #17bf63;
+	color: var(--maincolor);
 }
 
 #index-ul {
@@ -1124,7 +1140,7 @@ body.night #article-index {
 	list-style-type: disc;
 	padding: 0;
 	margin-left: 15px;
-	font-size: 12px;
+	font-size: 0.8em;
 	line-height: 2em;
 }
 
@@ -1159,6 +1175,13 @@ body.night #index-ul li a {
 .shuoshuo-entry .entry-content p {
 	text-align: justify;
 	color: #777;
+	padding: 15px;
+	margin: 0;
+}
+.shuoshuo-entry .entry-content p img{
+	max-width: auto;
+	height: auto;
+	
 }
 
 #page-wrapper{
@@ -1206,7 +1229,7 @@ body.night #index-ul li a {
 #social-icon i {
 	margin: 0;
 	padding: 0;
-	color: #17bf63;
+	color: var(--maincolor);
 }
 
 
@@ -1226,7 +1249,7 @@ body.night a {
 }
 
 body.night a:hover {
-	color: #17bf63;
+	color: var(--maincolor);
 }
 
 body.night #index-note {
@@ -2818,4 +2841,3 @@ pre.wp-block-verse {
 .has-huge-font-size {
 	font-size: 42px;
 }
-
