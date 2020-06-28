@@ -1,41 +1,50 @@
-<?php 
-/*
-Template Name: 说说
-author: ainy
-url: http://www.tang1314.com/shuoshuo
-*/
+<?php
+/**
+ * The main template file
+Template Name:说说
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ *
+ * @package wintery_pro
+ */
 
+get_header();
+?>
 
-get_header(); ?>
-<?php include 'index-note.php';?>
-<div class="clearfix"></div>
-	<div id="container" >
-		<div class="shuoshuo-wrapper">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+		
+			<article>
+
 			<?php query_posts("post_type=shuoshuo&post_status=publish&posts_per_page=-1");if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
-			<div class="post-text">
 
 							<div class="shuoshuo-entry">
-								<h4 class="entry-title"><?php the_title(); ?></h4>
-
-								<div class="entry-content"><?php the_content(); ?></div>
+								<?php the_content(); ?>
 
 							</div>
-					
-							<div class="metadata">
-
-									<li><i class="fa fa-clock-o "></i><?php the_time('n月j日G:i'); ?></li>
-								
+							<div class="shuoshuo-meta">
+								<div>		
+									<?php 
+									wintery_pro_posted_by();
+									?>
+								</div>
+							<span class="icon-clock"><?php the_time('n月j日G:i'); ?></span>
 							</div>
-					
-			</div>
-					<?php endwhile;endif; ?>
-		<?php get_footer();?>
-		</div>
-	</div>
+							<div class="clearfix"></div>
+				<?php endwhile;endif; ?>
+			</article>
 
-<?php get_sidebar(); ?>
+
+		</main><!-- #main -->
+		<?php
+	get_sidebar();
+	get_footer();?>
+	</div><!-- #primary -->
+
+</div><!-- #page -->
+<?php wp_footer(); ?>
 </body>
 </html>
-
-

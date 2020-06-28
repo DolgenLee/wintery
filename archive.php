@@ -1,52 +1,58 @@
 <?php
-/*
-Template Name:时间轴
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package wintery_pro
+ */
 
-*/
-get_header(); ?>
-<?php include 'index-note.php';?>
-<div class="clearfix"></div>
-	<div id="container">
+get_header();
+?>
 
-			<div class="poxt-text-wrapper">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-				<div class="post-text">
-					<h2>
-						穿梭机
-					</h2>
-					<div class="archives">
-						<?php
-							$previous_year = $year = 0;
-							$previous_month = $month = 0;
-							$ul_open = false;
-							$myposts = get_posts("numberposts=-1&orderby=post_date&order=DESC");
-								foreach($myposts as $post) :
-								setup_postdata($post);
-							$year = mysql2date('Y', $post->post_date);
-							$month = mysql2date('n', $post->post_date);
-							$day = mysql2date('j', $post->post_date);
-								if($year != $previous_year || $month != $previous_month) :
-								if($ul_open == true) :
-								echo '</ul>';
-								endif;
-								echo '<h4 class="m-title">'; echo the_time('Y-m'); echo '</h4>';
-								echo '<ul class="archives-monthlisting">';
-								$ul_open = true;
-								endif;
-							$previous_year = $year; $previous_month = $month;?>
-							<li>
-							<a href="<?php the_permalink(); ?>"><span><?php the_time('Y-m-j'); ?></span>
-							<div class="atitle"><?php the_title(); ?></div></a>
-							</li>
-							<?php endforeach; ?>
-							</ul>
-					</div>
-				</div>
-			</div>
-			<?php get_footer();?>
-	</div>
-<?php get_sidebar(); ?>
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content-excerpt', get_post_type() );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
+		?>
+
+
+		</main><!-- #main -->
+		<?php
+	get_sidebar();
+	get_footer();?>
+	</div><!-- #primary -->
+
+</div><!-- #page -->
+<?php wp_footer(); ?>
 </body>
 </html>
-
-

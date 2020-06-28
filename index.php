@@ -1,77 +1,65 @@
-<?php get_header(); ?>
-<?php include 'index-note.php';?>
-<div class="clearfix"></div>
-<div id="container">
+<?php
+/**
+ * The main template file
+ Template Name:博客页面
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ *
+ * @package wintery_pro
+ */
+get_header();
+?>
 
-		<div class="post-wrapper">
+	<div id="primary" class="content-area">
+		<?php get_template_part( 'slider', 'none' ); ?>
+		<main id="main" class="site-main">
+				<div id="primary" class="content-area">
+		
+		<?php
+		if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
+
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+
+				get_template_part( 'template-parts/content-excerpt', get_post_type() );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content-excerpt', 'none' );
+
+		endif;
+		?>
 
 
-			<?php if(have_posts()) : ?>
-			<?php while(have_posts()) : the_post(); ?>	
+		</main><!-- #main -->
+		<?php
+	get_sidebar();
+	get_footer();?>
+	</div><!-- #primary -->
 
-				<div class="post" id="post-<?php the_ID(); ?>">
-						
-						<div class="post-text">
-							<h2>
-								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
-									<?php the_title(); ?>
-								 </a>
-							</h2>
-								
-							<ul class="metadata">
-							
-									<li class="post-category">
-										<i class="fa fa-folder-o"></i><?php the_category('or') ?>
-									</li>
-									<li><i class="fa fa-clock-o "></i><?php the_time('Y年n月j日'); ?></li>
-									
-										<li>
-											<i class="fa fa-pencil-square-o" aria-hidden="true"></i><?php echo zm_count_words($text); ?>
-										</li>
-							</ul>
-
-
-							<div class="entry">
-								<?php the_excerpt(); ?>
-								
-
-							</div>
-							<div class="post-img">
-								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
-									<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="auto"/><?php }?>
-								
-								</a>
-							</div>
-
-						
-							
-						</div>
-						
-				</div>
-
-				<?php endwhile; ?>
-
-				<div class="post-text">
-					<?php
-						the_posts_pagination( array(
-						    'mid_size'  => 6,
-						    'prev_text' => __( '<i class="fa fa-chevron-up" aria-hidden="true"></i>', 'textdomain' ),
-						    'next_text' => __( '<i class="fa fa-chevron-down" aria-hidden="true"></i>', 'textdomain' ),
-						) );
-					?>
-				</div>
-
-				<?php endif; ?>
-
-				<?php get_footer();?>
-
-		</div>
-</div>
-			
-
-<?php get_sidebar(); ?>
-
+</div><!-- #page -->
+<?php wp_footer(); ?>
 </body>
 </html>
-
-

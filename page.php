@@ -1,52 +1,45 @@
-<?php get_header(); ?>
-<?php include 'index-note.php';?>
-<div class="clearfix"></div>
-<div id="container">
-	<div id="page-wrapper">
-		<?php if(have_posts()) : ?>
-		<?php while(have_posts()) : the_post(); ?>	
-			<div class="post" id="post-<?php the_ID(); ?>">
-						<div class="post-img-single">
-							<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(800,300),array('alt'=> trim(strip_tags( $post->post_title ))));} else {?><img class="post-img-single" src="<?php echo get_first_image(); ?>" alt="<?php the_title(); ?>" width="800" height="300"/><?php }?>
-						</div>
-					<div class="post-text">
-						<h2>
-							<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"> 
-								<?php the_title(); ?>
-							 </a>
-						</h2>
-							
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package wintery_pro
+ */
 
+get_header();
+?>
 
-						<div class="entry">
-						<?php the_content(); ?>
-						<?php link_pages('
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-							<strong>Pages:</strong>', '
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-							', 'number'); 
-						?>
+			get_template_part( 'template-parts/content', 'page' );
 
-						</div>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-					</div>
-					
-			</div>
+		endwhile; // End of the loop.
+		?>
 
-			<?php endwhile; ?>
+		</main><!-- #main -->
+		<?php
+	get_sidebar();
+	get_footer();?>
+	</div><!-- #primary -->
 
-
-			<?php endif; ?>
-			
-			
-	</div>
-
-	<?php get_footer();?>
-
-
-</div>
-<?php get_sidebar(); ?>
+</div><!-- #page -->
+<?php wp_footer(); ?>
 </body>
 </html>
-
-
+</html>
